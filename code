@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class system {
+
+	public static void main(String[] args) {
+
+		String product = null ;
+		String option = null;
+		int i = 0;
+		double totalPrice = 0, total = 0;
+		String[] items = {"A","B","C","D","E","f","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+		Double[] prices = {50.00,30.00,20.00,15.00,10.00,55.00,11.00,20.50,50.00,60.90,10.55,1.50,4.20,11.50,50.00,11.99,25.00,45.00,120.00,36.00,25.00,4.99,6.99,57.00,17.00,3.00};
+
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("        Welcome to the Self Checkout");
+		System.out.println("============================================");
+
+		for (String item : items) 
+		{
+			System.out.println("Please enter the Item bought (A, B, C, etc): ");
+			product = scan.nextLine();
+			if (item.equalsIgnoreCase(product)){
+				
+				System.out.println("Item does not exist");
+			}
+			else{
+				System.out.println("Do you want to enter another product? (Y/N): ");
+				option = scan.nextLine();
+				
+			}
+			if (option.equalsIgnoreCase("Y"))
+			{
+
+			} else if (option.equalsIgnoreCase("N")) {
+				total = 0;
+				totalPrice += prices[i];
+				System.out.println("The total balance is: £"+totalPrice);
+				break;
+			}
+		}
+
+		
+	}
+}
